@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.awt.FontMetrics;
 
 public class Board extends JPanel {
 
@@ -65,7 +66,7 @@ public class Board extends JPanel {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
 
-                var alien = new Alien(Commons.ALIEN_INIT_X + 18 * j,
+                Alien alien = new Alien(Commons.ALIEN_INIT_X + 18 * j,
                         Commons.ALIEN_INIT_Y + 18 * i);
                 aliens.add(alien);
             }
@@ -171,8 +172,8 @@ public class Board extends JPanel {
         g.setColor(Color.white);
         g.drawRect(50, Commons.BOARD_WIDTH / 2 - 30, Commons.BOARD_WIDTH - 100, 50);
 
-        var small = new Font("Helvetica", Font.BOLD, 14);
-        var fontMetrics = this.getFontMetrics(small);
+        Font small = new Font("Helvetica", Font.BOLD, 14);
+        FontMetrics fontMetrics = this.getFontMetrics(small);
 
         g.setColor(Color.white);
         g.setFont(small);
@@ -209,7 +210,7 @@ public class Board extends JPanel {
                             && shotY >= (alienY)
                             && shotY <= (alienY + Commons.ALIEN_HEIGHT)) {
 
-                        var ii = new ImageIcon(explImg);
+                        ImageIcon ii = new ImageIcon(explImg);
                         alien.setImage(ii.getImage());
                         alien.setDying(true);
                         deaths++;
@@ -281,7 +282,7 @@ public class Board extends JPanel {
         }
 
         // bombs
-        var generator = new Random();
+        Random generator = new Random();
 
         for (Alien alien : aliens) {
 
@@ -307,7 +308,7 @@ public class Board extends JPanel {
                         && bombY >= (playerY)
                         && bombY <= (playerY + Commons.PLAYER_HEIGHT)) {
 
-                    var ii = new ImageIcon(explImg);
+                    ImageIcon ii = new ImageIcon(explImg);
                     player.setImage(ii.getImage());
                     player.setDying(true);
                     bomb.setDestroyed(true);

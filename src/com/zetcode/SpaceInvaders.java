@@ -26,7 +26,7 @@ public class SpaceInvaders extends JFrame  {
 
         EventQueue.invokeLater(() -> {
 
-            var ex = new SpaceInvaders();
+            SpaceInvaders ex = new SpaceInvaders();
             ex.setVisible(true);
         });
     }
