@@ -34,7 +34,7 @@ public class Board extends JPanel {
 
     private boolean inGame = true;
     private String explImg = "src/images/explosion.png";
-    private String message = "Game Over";
+    private String message = "nooooo";
 
     private Timer timer;
 
@@ -164,7 +164,7 @@ public class Board extends JPanel {
 
     private void gameOver(Graphics g) {
 
-        g.setColor(Color.black);
+        g.setColor(Color.darkGray);
         g.fillRect(0, 0, Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
 
         g.setColor(new Color(0, 32, 48));
@@ -187,7 +187,7 @@ public class Board extends JPanel {
 
             inGame = false;
             timer.stop();
-            message = "Game won!";
+            message = "yayyyy";
         }
 
         // player
