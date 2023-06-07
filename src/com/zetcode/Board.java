@@ -172,7 +172,7 @@ public class Board extends JPanel {
         g.setColor(Color.white);
         g.drawRect(50, Commons.BOARD_WIDTH / 2 - 30, Commons.BOARD_WIDTH - 100, 50);
 
-        Font small = new Font("Helvetica", Font.BOLD, 14);
+        Font small = new Font("Helvetica", Font.BOLD, 12);
         FontMetrics fontMetrics = this.getFontMetrics(small);
 
         g.setColor(Color.white);
@@ -187,7 +187,7 @@ public class Board extends JPanel {
 
             inGame = false;
             timer.stop();
-            message = "Yay! You have defended Earth with the power Nyan Cat! Mr. Peck and his minions have perished!";
+            message = "Mr Peck and his minions have perished!";
         }
 
         // player
