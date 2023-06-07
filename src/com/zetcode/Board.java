@@ -34,7 +34,7 @@ public class Board extends JPanel {
 
     private boolean inGame = true;
     private String explImg = "src/images/explosion.png";
-    private String message = "Game Over";
+    private String message = "Mr. Peck and his minions won...";
 
     private Timer timer;
 
@@ -50,7 +50,7 @@ public class Board extends JPanel {
         addKeyListener(new TAdapter());
         setFocusable(true);
         d = new Dimension(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
-        setBackground(Color.black);
+        setBackground(Color.magenta);
 
         timer = new Timer(Commons.DELAY, new GameCycle());
         timer.start();
@@ -136,9 +136,9 @@ public class Board extends JPanel {
 
     private void doDrawing(Graphics g) {
 
-        g.setColor(Color.black);
+        g.setColor(Color.BLACK);
         g.fillRect(0, 0, d.width, d.height);
-        g.setColor(Color.green);
+        g.setColor(Color.PINK);
 
         if (inGame) {
 
@@ -187,7 +187,7 @@ public class Board extends JPanel {
 
             inGame = false;
             timer.stop();
-            message = "Game won!";
+            message = "Yay! You have defended Earth with the power Nyan Cat! Mr. Peck and his minions have perished!";
         }
 
         // player
@@ -274,7 +274,7 @@ public class Board extends JPanel {
 
                 if (y > Commons.GROUND - Commons.ALIEN_HEIGHT) {
                     inGame = false;
-                    message = "Invasion!";
+                    message = "Mr. Peck and his minions have successfully invaded the planet... Mwahahaha!";
                 }
 
                 alien.act(direction);
