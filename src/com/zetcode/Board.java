@@ -50,7 +50,7 @@ public class Board extends JPanel {
         addKeyListener(new TAdapter());
         setFocusable(true);
         d = new Dimension(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
-        setBackground(Color.black);
+        setBackground(Color.magenta);
 
         timer = new Timer(Commons.DELAY, new GameCycle());
         timer.start();
@@ -136,9 +136,9 @@ public class Board extends JPanel {
 
     private void doDrawing(Graphics g) {
 
-        g.setColor(Color.black);
+        g.setColor(Color.BLACK);
         g.fillRect(0, 0, d.width, d.height);
-        g.setColor(Color.green);
+        g.setColor(Color.PINK);
 
         if (inGame) {
 
@@ -172,7 +172,7 @@ public class Board extends JPanel {
         g.setColor(Color.white);
         g.drawRect(50, Commons.BOARD_WIDTH / 2 - 30, Commons.BOARD_WIDTH - 100, 50);
 
-        Font small = new Font("Helvetica", Font.BOLD, 14);
+        Font small = new Font("Helvetica", Font.BOLD, 12);
         FontMetrics fontMetrics = this.getFontMetrics(small);
 
         g.setColor(Color.white);
@@ -274,7 +274,7 @@ public class Board extends JPanel {
 
                 if (y > Commons.GROUND - Commons.ALIEN_HEIGHT) {
                     inGame = false;
-                    message = "Invasion!";
+                    message = "Mr. Peck and his minions have successfully invaded the planet... Mwahahaha!";
                 }
 
                 alien.act(direction);
